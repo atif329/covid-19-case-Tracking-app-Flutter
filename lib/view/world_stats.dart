@@ -35,10 +35,10 @@ class _WorldStatsScreenState extends State<WorldStatsScreen>
   @override
   Widget build(BuildContext context) {
     StatesServices statesServices = StatesServices();
-    return Scaffold(
-      backgroundColor: Colors.grey.shade700,
-      body: SafeArea(
-        child: Padding(
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Colors.grey.shade700,
+        body: Padding(
           padding: const EdgeInsets.all(15.0),
           child: SingleChildScrollView(
             scrollDirection: Axis.vertical,
@@ -49,13 +49,11 @@ class _WorldStatsScreenState extends State<WorldStatsScreen>
                     builder:
                         (context, AsyncSnapshot<WorldStatesModel> snapshot) {
                       if (!snapshot.hasData) {
-                        return Expanded(
-                            flex: 1,
-                            child: SpinKitFadingCircle(
-                              color: Colors.white,
-                              size: 50,
-                              controller: _controller,
-                            ));
+                        return SpinKitFadingCircle(
+                          color: Colors.white,
+                          size: 50,
+                          controller: _controller,
+                        );
                       } else {
                         return Column(
                           mainAxisAlignment: MainAxisAlignment.center,

@@ -37,49 +37,53 @@ class _DetailScreenState extends State<DetailScreen> {
         title: Text(widget.name),
         centerTitle: true,
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Stack(
-            alignment: Alignment.topCenter,
-            children: [
-              Padding(
-                padding: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height * .067),
-                child: Card(
-                  child: Column(
-                    children: [
-                      SizedBox(
-                          height: MediaQuery.of(context).size.height * .06),
-                      ReusableRow(
-                          title: 'Cases', value: widget.totalCases.toString()),
-                      ReusableRow(
-                          title: 'Total Recovered',
-                          value: widget.totalRecovered.toString()),
-                      ReusableRow(
-                          title: 'Recovered Today',
-                          value: widget.todayRecovered.toString()),
-                      ReusableRow(
-                          title: 'Deaths',
-                          value: widget.totalDeaths.toString()),
-                      ReusableRow(
-                          title: 'Critical', value: widget.critical.toString()),
-                      ReusableRow(
-                          title: 'Active', value: widget.active.toString()),
-                      ReusableRow(
-                          title: 'Tests', value: widget.test.toString()),
-                    ],
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Stack(
+              alignment: Alignment.topCenter,
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(
+                      top: MediaQuery.of(context).size.height * .067),
+                  child: Card(
+                    child: Column(
+                      children: [
+                        SizedBox(
+                            height: MediaQuery.of(context).size.height * .06),
+                        ReusableRow(
+                            title: 'Cases',
+                            value: widget.totalCases.toString()),
+                        ReusableRow(
+                            title: 'Total Recovered',
+                            value: widget.totalRecovered.toString()),
+                        ReusableRow(
+                            title: 'Recovered Today',
+                            value: widget.todayRecovered.toString()),
+                        ReusableRow(
+                            title: 'Deaths',
+                            value: widget.totalDeaths.toString()),
+                        ReusableRow(
+                            title: 'Critical',
+                            value: widget.critical.toString()),
+                        ReusableRow(
+                            title: 'Active', value: widget.active.toString()),
+                        ReusableRow(
+                            title: 'Tests', value: widget.test.toString()),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-              CircleAvatar(
-                radius: 50,
-                backgroundImage: NetworkImage(widget.image),
-              )
-            ],
-          )
-        ],
+                CircleAvatar(
+                  radius: 50,
+                  backgroundImage: NetworkImage(widget.image),
+                )
+              ],
+            )
+          ],
+        ),
       ),
     );
   }

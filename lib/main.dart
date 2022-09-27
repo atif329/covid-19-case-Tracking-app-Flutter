@@ -1,5 +1,4 @@
 import 'package:covid_tracker/view/splash_screen.dart';
-import 'package:covid_tracker/view/world_stats.dart';
 import 'package:flutter/material.dart';
 
 void main() {

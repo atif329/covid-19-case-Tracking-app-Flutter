@@ -38,41 +38,43 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Center(
-              child: AnimatedBuilder(
-                  animation: _controller,
-                  builder: (BuildContext context, Widget? child) {
-                    return Transform.rotate(
-                      angle: _controller.value * 2.0 * math.pi,
-                      // ignore: sized_box_for_whitespace
-                      child: Container(
-                        height: 200,
-                        width: 200,
-                        child: const Center(
-                          child: Image(
-                            fit: BoxFit.cover,
-                            image: AssetImage("assets/images/virus.png"),
+      body: SafeArea(
+        child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Center(
+                child: AnimatedBuilder(
+                    animation: _controller,
+                    builder: (BuildContext context, Widget? child) {
+                      return Transform.rotate(
+                        angle: _controller.value * 2.0 * math.pi,
+                        // ignore: sized_box_for_whitespace
+                        child: Container(
+                          height: 200,
+                          width: 200,
+                          child: const Center(
+                            child: Image(
+                              fit: BoxFit.cover,
+                              image: AssetImage("assets/images/virus.png"),
+                            ),
                           ),
                         ),
-                      ),
-                    );
-                  }),
-            ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * .08,
-            ),
-            const Align(
-                alignment: Alignment.center,
-                child: Text(
-                  'Covid-19\nTracker App',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
-                ))
-          ]),
+                      );
+                    }),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * .08,
+              ),
+              const Align(
+                  alignment: Alignment.center,
+                  child: Text(
+                    'Covid-19\nTracker App',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+                  ))
+            ]),
+      ),
     );
   }
 }
