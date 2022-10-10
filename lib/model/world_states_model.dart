@@ -18,7 +18,7 @@ class WorldStatesModel {
   int? oneTestPerPeople;
   double? activePerOneMillion;
   double? recoveredPerOneMillion;
-  int? criticalPerOneMillion;
+  double? criticalPerOneMillion;
   int? affectedCountries;
 
   WorldStatesModel(
